@@ -1,0 +1,3 @@
+
+
+.find_or_initialize_by(cream_cheese: true)

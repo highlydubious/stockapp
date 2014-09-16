@@ -1,0 +1,27 @@
+
+<!-- This page represents the accumlated feed off all notes -->
+
+
+<h1>Notes#index</h1>
+<p>Find me in app/views/notes/index.html.erb</p>
+
+
+<div class="main_wrapper">
+
+	<div class="notes_container">
+		<h2> Note Feed </h2>
+		<ul>
+			<% @notes.each do |n| %>
+			<div class="item_block">
+				<li><strong> <%= n.market %> </strong></li>
+				<li> <%= n.date %> </li>
+				<li> <%= n.timeframe %> </li>
+				<li> <%= n.comment %> </li>
+				<%= link_to 'Edit', '#' %>
+				<%= link_to 'Delete', '#' %>
+			</div>
+			<% end %>
+		</ul>
+	</div>
+
+</div>
