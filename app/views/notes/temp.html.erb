@@ -1,0 +1,12 @@
+Hello there is text here
+<% @notes.inspect %>
+</br>
+<% @notes.each do |note| %>
+	<%= note.stock.name if note.stock %>
+	<%= note.market %>
+	<%= note.id %>
+	<%= note.date %>
+	<%= note.timeframe %>
+	<%= note.comment %>
+	</br>
+<% end %>

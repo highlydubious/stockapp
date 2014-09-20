@@ -1,46 +1,41 @@
 
-<h1>Sign Up!</h1>
 
-<div class="row"> 
-
-	Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum.
-
-	Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper.
-
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
+<div class="bg-intro" "row">
 </div>
 
-<div class="col-md-4">
+<div class="middle"></div>
 
-	Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum.
+<div class="bg-intro2" "row">
+	<h2> Sign up Today, Make Money Tommorow </h2>
 
-	Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
-</div>
+	<div class="signup" "row">
+	<div class="form_container">
+		<div class= "bg-lower-info">
+			<%= form_for @user do |f| %>
+				<%= f.label :name %> 
+				<%= f.text_field :name %>
 
-<div class="col-md-4">
-	<%= form_for @user do |f| %>
-		<%= f.label :name %> 
-		<%= f.text_field :name %>
+				<%= f.label :email %> 
+				<%= f.text_field :email %>
 
-		<%= f.label :email %> 
-		<%= f.text_field :email %>
+				<%= f.label :password %> 
+				<%= f.password_field :password %>
 
-		<%= f.label :password %> 
-		<%= f.password_field :password %>
+				<%= f.submit "Sign Me Up!" %> 
+				<%= link_to "Back to Welcome Page", '#' %>
+			<% end %>  	
+		</div>
+	</div>
 
-		<%= f.submit "Sign Me Up!" %> 
-		<%= link_to "Back to Welcome Page", '#' %>
-	<% end %>
 </div>
 
 
-<div class="col-md-4">
-
-	Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum.
-
-	Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper.
-
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
 </div>
+
+<div class="lower-info">
+	
+</div>
+
+
+

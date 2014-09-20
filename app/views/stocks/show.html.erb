@@ -1,0 +1,18 @@
+
+
+
+<div id="show-note">
+
+<%= link_to '<< Back to Activity', '../notes/index' %>
+
+<ul>
+	<% @stock.notes.each do |note| %>
+		<li><span id="head"><%= note.stock.name  %>  <%= note.stock.symbol  %></span></li>
+		<li><%= note.market  %></li>
+		<li><%= note.date  %></li>
+		<li><%= note.comment  %></li>
+		</br>
+	<% end %>
+</ul>
+
+<div id="show-note">

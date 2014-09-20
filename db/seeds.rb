@@ -25,16 +25,28 @@ stock = Stock.create ([
   {
     name: 'Facebook',
     symbol: 'FB'
+  },
+  {
+    name: 'Nike',
+    symbol: 'NKE'
   }
 
   ]);
 
 note = Note.create([
   {
-    market: "AAPL",
+    market: "NKE",
     date: "September 15, 2014, 11:33am",
     timeframe: "Daily",
     comment: "Market looks strong, lots of intersting stuff going on here",
+
+    stock: stock[2]
+  },
+   {
+    market: "AAPL",
+    date: "September 16, 2014, 11:33am",
+    timeframe: "Daily",
+    comment: "Crazy AHHHH",
 
     stock: stock[0]
   },
@@ -47,10 +59,12 @@ note = Note.create([
     stock: stock[1]
   },
   {
-    market: "TSLA",
+    market: "AAPL",
     date: "September 15, 2014, 11:33am",
     timeframe: "15m",
-    comment: "Time to sell, keep watching"
+    comment: "UHOH",
+
+    stock: stock[0]
   },
   ]);
 

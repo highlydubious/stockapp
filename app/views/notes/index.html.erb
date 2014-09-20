@@ -2,26 +2,40 @@
 <!-- This page represents the accumlated feed off all notes -->
 
 
-<h1>Notes#index</h1>
-<p>Find me in app/views/notes/index.html.erb</p>
 
+<div>
+	<% if !flash[:notice].blank? %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>	
+	<% end %>
+</div>
 
-<div class="main_wrapper">
+<div class="activity-wrapper container-fluid"> 
 
-	<div class="notes_container">
-		<h2> Note Feed </h2>
-		<ul>
-			<% @notes.each do |n| %>
-			<div class="item_block">
-				<li><strong> <%= n.market %> </strong></li>
-				<li> <%= n.date %> </li>
-				<li> <%= n.timeframe %> </li>
-				<li> <%= n.comment %> </li>
-				<%= link_to 'Edit', '#' %>
-				<%= link_to 'Delete', '#' %>
-			</div>
-			<% end %>
-		</ul>
-	</div>
+	<div class="center-modules">
 
+		<% @notes.reverse.each do |n| %>
+				<div class="notes_container col-md-6">
+					<h3 class="title"><%= n.stock.name if n.stock %></h3>
+				<!-- how do do i get the stocks from seperete mongo doc to appear? -->
+				
+					<ul>
+					
+						<div class="item_block">
+							<li><%= link_to n.stock.symbol, stock_path(n.stock.id) %></li>
+							<li> <%= n.date %> </li>
+							<li> <%= n.timeframe %> </li>
+							<li> <%= n.comment %> </li>
+							<li><%= link_to 'Individual Page ', note_path(n) %></li>
+							<%= link_to 'Edit', '#' %>
+							<%= link_to 'Delete', destroy_path(n), :method => :delete %>
+						</div>	
+					</ul>
+				</div>
+		<% end %>
+	</div>		
+</div>
+
+<div class="home-header">
 </div>

@@ -2,30 +2,208 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 body {
 	// background-color: RGBA(34, 34, 34, 1);
-	background-color: RGBA(39, 39, 39, 1);
+	// background-color: RGBA(39, 39, 39, 1);
+	// background-color: RGBA(47, 45, 58, 1);
+	background-color: RGBA(242, 242, 242, 1);
+	font-family: 'Molengo', sans-serif;
 }
 
-.main_wrapper {
-	
+
+.mega-wrapper {
+	margin-top: 60px;
+}
+
+
+// FLASH HEADER 
+.flash {
+	height: 50px;
+	width: 100%;
+	background-color: RGBA(250, 250, 250, 1);
+	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 3px 0px;
+	border: 1px solid rgb(225, 225, 225);
+	border-radius: 1px;
+}
+
+
+
+// NAVIGATION BAR 
+.navbar {
+	display: inline-block;
+	list-style: none;
+	width: 100%;
+	padding: 0px;
+	position: fixed;
+	top: 0px;
+
+}
+
+.navbar li {
+	display: inline-block;
+	padding-top: 14px;
+	padding-right: 5px;
+
+}
+
+.navbar ul {
+	padding-top: 10px;
+}
+
+
+// Notes and Stuff
+
+
+.center-modules {
+	max-width: 2000px;
+	// column-count: 2;
+	margin: 0 auto;
+	float: left;
+	padding-left: 13%;
 }
 
 .notes_container {
-	width: 500px;
-	margin: 0 auto;
 	background-color: RGBA(250, 250, 250, 1);
-	box-shadow: 0 2px 10px rgba(0,0,0,.2);
-	border: 1px solid #ccc;
-	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 3px 0px;
+	border: 1px solid rgb(225, 225, 225);
+	border-radius: 1px;
+	margin: 10px;
+	max-width: 500px;
+
+
 }
+
 
 .notes_container ul {
 	list-style: none;
-	padding: 5px;
+	padding: 5px;	
 }
 
-.item_block {
-	border-bottom: 1px solid #E0E0E0;
-	padding: 10px;
+
+.title {
+	color: purple;
 }
+
+
+//  WELCOME PAGE ///
+
+.bg-intro {
+	background-image: image-url('eagle.jpg');
+	background-position: 0px -50px, center;
+	background-size: cover;
+	background-attachment: fixed;
+	// background-color: RGBA(86, 208, 179, 1);
+	opacity: 0.7;
+	height: 650px;
+	width: 100%;
+	z-index: 1000;
+}
+
+.bg-intro2 {
+	background-image: image-url('jellybean.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.85;
+	height: 650px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.bg-intro2 h2 {
+	padding-top: 45px;
+	font-size: 30px;
+}
+
+
+// Determines size of form container
+.signup {
+	height: 600px;
+}
+
+.form_container {
+	max-width: 400px;
+	margin: 50px auto;
+
+}
+
+
+.bg-lower-info {
+	
+	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 3px 0px;	
+	background-color: white;
+	border-radius: 4px;
+	color: black;
+	border: 1px solid RGBA(236, 240, 241, 1);
+	// background-color: RGBA(48, 56, 64, 1);
+}
+
+.lower-info {
+	background-color: RGBA(48, 56, 64, 1);
+	height: 400px;
+}
+
+
+////////
+
+.chart {
+	margin: 0 auto;
+	text-align: center;
+	background-color: white;
+
+}
+
+
+// index home page 
+
+.home-header {
+	height: 250px;
+	background-color: RGBA(48, 56, 64, 1);
+	background-image: image-url('eagle.jpg');
+	background-position: 0px -90px, center;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+
+.home-header h2 {
+	font-size: 50px;
+	padding-left: 80px;
+	padding-top: 80px;
+	color: white;
+}
+
+// Individual Show Page
+
+#show-note {
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 3px 0px;
+	border: 1px solid rgb(225, 225, 225);
+	border-radius: 1px;
+	max-width: 1000px;
+	margin: 0 auto;
+
+}
+
+#show-note ul {
+	color: black; 
+	list-style: none;
+	font-size: 16px;
+	padding: 10px;
+	
+}
+
+
+#show-note li {
+	
+}
+
+#head {
+	font-size: 28px;
+}
+
+
+
+

@@ -13,10 +13,77 @@
  *= require_tree .
  *= require_self
  */
-
-@import "bootstrap";
+ 
+@import url(http://fonts.googleapis.com/css?family=Amaranth:400,700|Molengo|Roboto:400,900);
 @import "bootstrap-sprockets";
+@import "bootstrap";
+
+
 
 @import "notes";
 @import "user";
+
+$brown: #754b36;
+$red: #fc2632;
+$really_red: rgba(0,0,0,0.24);
+
+
+.stocks {
+	color: white;
+}
+
+form {
+	padding: 2rem;
+	label {
+		display: block;
+		color: $brown;
+	}
+	
+
+	input {
+		font-size: 1rem;
+		border-radius: 3px;
+		border: 1px solid ($really_red);
+		padding: 0.618em;
+		margin-bottom: 1rem;
+		display: block;
+		width: 100%;
+		&:focus {
+			outline: none;
+			border-color: lighten($brown, 12%);
+		}
+	}
+	input[type=submit] {
+		background: RGBA(199, 33, 39, 1);
+		color: white;
+		border: 1px solid rgba(0,0,0,0.24);
+		margin: 2rem auto;
+		cursor: pointer;
+		padding: 1em 1.618em;
+	}
+
+	input[type=radio] {
+		display: inline;
+		width: 3px;
+		float: left;
+		padding-right: 10px;
+		
+	}
+
+	#note_comment {
+		background: RGBA(236, 240, 241, 1);
+		color: black;
+		font-size: 18px;
+		height: 150px;
+		width: 100%;
+		border: 1px dashed rgba(0,0,0,0.24);
+		margin: 0px auto;
+		cursor: pointer;
+		padding: 1em 1.618em;
+	}
+
+	a {
+		color: complement($brown);
+	}
+}
 

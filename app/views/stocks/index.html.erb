@@ -1,0 +1,12 @@
+Welcome to the Index Page
+
+<ul class='stocks'>
+	<% @stocks.each do |stock| %>
+		<li><%= stock.name %></li>
+		<li><%= stock.symbol %></li>
+		<li><%= stock.current_price %></li>
+	<% stock.notes.each do |note| %>
+		<li><%= note.date %></li>
+	<% end %>
+	<% end %>
+</ul>

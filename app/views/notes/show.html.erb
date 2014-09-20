@@ -1,0 +1,21 @@
+Hello there is text here
+
+
+
+	<h2> <%= @notes.last.stock.name if @notes.last.stock %> </h2>
+
+	<ul>
+		<% @notes.each do |note| %>
+			<li><%= note.stock.name if note.stock %></li>
+			<li><%= note.market %></li>
+			<li><%= note.id %></li>
+			<li><%= note.date %></li>
+			<li><%= note.timeframe %></li>
+			<li><%= note.comment %></li>
+			</br>
+		<% end %>
+	</ul>
+
+
+
+

@@ -1,0 +1,28 @@
+
+    <%= form_for @note do |f| %>
+
+    <%= label_tag :stock_symbol %>
+    <%= text_field_tag :stock_symbol %>
+
+    <%= label_tag :stock_name %>
+    <%= text_field_tag :stock_name %>
+
+    <%= f.label :timeframe %> 
+    <%= f.text_field :timeframe %>
+
+    <%= f.radio_button :direction, 'Long', :checked => true %> 
+    <%= f.label :Long %>
+    <%= f.radio_button :direction, 'Short' %>
+    <%= f.label :Short %>
+
+	<%= f.label :comment %> 
+	<%= f.text_area :comment %> 
+
+	<%= f.submit 'Add Note' %>
+
+<% end %>
+
+
+
+
+

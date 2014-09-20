@@ -7,4 +7,6 @@ class Stock
   # WHAT DO I STICK IN HERE AS ATTRIBUTES OF STOCKS ???
 
   has_many :notes
+  accepts_nested_attributes_for :notes
+  
 end

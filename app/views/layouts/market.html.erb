@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stockapp</title>
+  <title>Stockapp | <%= @title %> </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
-<body>
+<body data-no-turbolink>
+
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container">
-    <li>Home</li>
+    <li><%= link_to 'Home', home_path %></li>
+    <li>Sign in</li>
+    <li> <%= link_to 'Add Note', new_path %> </li>
+    <li> <%= link_to 'Sign up', signup_path %> </li>
   </div>
 </nav>
+<div class='mega-wrapper'>
 
 <%= yield %>
 
+</div>
 </body>
 </html>

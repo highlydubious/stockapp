@@ -1,11 +1,41 @@
 Rails.application.routes.draw do
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  root 'notes#index', as: :home
+  
   get 'notes/index'
+
+  get 'notes/new' => 'notes#new', as: :new
 
   get 'notes/activity' => 'notes#activity'
 
-  get 'user/signup' => 'users#new'
 
-  post 'user/signup' => 'users#create', as: :users
+
+  get 'notes/show' => 'notes#show', as: :show
+
+  post 'notes' => 'notes#create'
+
+  delete 'notes/:id' => 'notes#destroy', as: :destroy
+
+
+
+# User Junk and Routes
+  get 'signup' => 'users#new', as: :signup
+  post 'signup' => 'users#create', as: :users
+
+
+# Stock Routes #
+
+  get 'stocks/index' => 'stocks#index', as: :stocklist
+  
+  get 'stocks/:id' => 'stocks#show', as: :stock
+
+  get 'notes/:id' => 'notes#note', as: :note
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
