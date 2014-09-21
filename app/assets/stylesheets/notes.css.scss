@@ -16,6 +16,10 @@ body {
 	margin-top: 60px;
 }
 
+h3 {
+	font-size: 18px;
+}
+
 
 // FLASH HEADER 
 .flash {
@@ -37,19 +41,35 @@ body {
 	padding: 0px;
 	position: fixed;
 	top: 0px;
-
-}
-
-.navbar li {
-	display: inline-block;
-	padding-top: 14px;
-	padding-right: 5px;
+	height: 60px;
 
 }
 
 .navbar ul {
 	padding-top: 10px;
 }
+
+.navbar li {
+	display: inline-block;
+	padding-top: 10px;
+	padding-right: 5px;
+
+}
+
+#logo {
+	padding-left: 28%;
+	font-size: 20px;
+	color: RGBA(199, 33, 39, 1);
+
+	font-family: 'Candal', sans-serif;
+	font-weight: bold;
+}
+
+#logo:hover + .home-header {
+	display: none;
+}
+
+
 
 
 // Notes and Stuff
@@ -70,6 +90,8 @@ body {
 	border-radius: 1px;
 	margin: 10px;
 	max-width: 500px;
+	height: 200px;
+	overflow: scroll;
 
 
 }
@@ -83,7 +105,29 @@ body {
 
 .title {
 	color: purple;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	color: #aaa;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	display: block;
+	border-radius: 4px;
+	text-align: center;
 }
+
+.title:hover {
+	background-color: RGBA(236, 240, 241, 1);
+	text-decoration: none;
+}
+
+.title a {
+	color: RGBA(48, 56, 64, 1);
+}
+
+.title a:hover {
+	text-decoration: none;
+}
+
 
 
 //  WELCOME PAGE ///
@@ -159,13 +203,19 @@ body {
 // index home page 
 
 .home-header {
-	height: 250px;
-	background-color: RGBA(48, 56, 64, 1);
-	background-image: image-url('eagle.jpg');
+	height: 300px;
+	background-color: RGBA(31, 34, 40, 1);
+	// background-image: image-url('eagle.jpg');
 	background-position: 0px -90px, center;
 	background-size: cover;
 	background-attachment: fixed;
+	margin: 0 auto;
+	display: none;
 	
+}
+
+.home-header:hover {
+	display: block;
 }
 
 .home-header h2 {
@@ -202,6 +252,10 @@ body {
 
 #head {
 	font-size: 28px;
+}
+
+.note-form {
+	max-width: 250px;
 }
 
 
