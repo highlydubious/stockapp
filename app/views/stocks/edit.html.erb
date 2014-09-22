@@ -1,0 +1,38 @@
+Here is a blank page that will be used for editing
+
+<%= form_for @note do |f| %>
+
+
+<div class="col-md-6">
+
+  
+
+    <%= label_tag :stock_symbol %>
+    <%= text_field_tag :stock_symbol %>
+
+    <%= label_tag :stock_name %>
+    <%= text_field_tag :stock_name %>
+
+    <%= f.label :timeframe %> 
+    <%= f.text_field :timeframe %>
+
+    <%= f.radio_button :direction, 'Long', :checked => true %> 
+    <%= f.label :Long %>
+    <%= f.radio_button :direction, 'Short' %>
+    <%= f.label :Short %>
+
+    
+
+</div>
+
+<div class="col-md-6">
+
+
+  <%= f.label :comment %> 
+  <%= f.text_area :comment %> 
+  <%= f.submit 'Add Note' %>
+  
+
+</div>
+
+<% end %>

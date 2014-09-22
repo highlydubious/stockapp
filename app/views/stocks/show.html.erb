@@ -1,18 +1,83 @@
+<%= link_to '<< Back to Activity', home_path, :class => "links" %>
 
+<div class="chart row">
 
+<!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "width": 998,
+  "height": 450,
+  "symbol": "CME_MINI:ES1!",
+  "interval": "D",
+  "timezone": "exchange",
+  "theme": "White",
+  "style": "0",
+  "toolbar_bg": "#f1f3f6",
+  "allow_symbol_change": true,
+  "hideideas": true,
+  "show_popup_button": true,
+  "popup_width": "1000",
+  "popup_height": "650"
+});
+</script>
+<!-- TradingView Widget END -->
+
+</div>
 
 <div id="show-note">
 
-<%= link_to '<< Back to Activity', '../notes/index' %>
+
+
+<span id="head"><strong>Market: </strong><%= @stock.name  %>  <%= @stock.symbol  %></span>
 
 <ul>
 	<% @stock.notes.each do |note| %>
-		<li><span id="head"><%= note.stock.name  %>  <%= note.stock.symbol  %></span></li>
-		<li><%= note.market  %></li>
-		<li><%= note.date  %></li>
-		<li><%= note.comment  %></li>
+		<li id="date"><%= note.date  %></li>
+		<li><%= note.direction  %></li>
+    <li><%= note.comment  %></li>
+    <%= link_to 'Edit', edit_path(note) %>
 		</br>
 	<% end %>
 </ul>
 
-<div id="show-note">
+
+<div class="form_show" >
+
+<%= form_for @note do |f| %>
+
+
+<div class="col-md-6 row">
+
+  
+<!-- These will be autopopualted -->
+    <%= label_tag :stock_symbol%>
+    <%= text_field_tag :stock_symbol, value = @stock.symbol %>
+
+    <%= f.label :timeframe %> 
+    <%= f.text_field :timeframe %>
+
+    <%= f.radio_button :direction, 'Long', :checked => true %> 
+    <%= f.label :Long %>
+    <%= f.radio_button :direction, 'Short' %>
+    <%= f.label :Short %>
+
+    
+
+</div>
+
+
+
+<div class="col-md-6">
+
+
+  <%= f.label :comment %> 
+  <%= f.text_area :comment %> 
+  <%= f.submit 'Add Note' %>
+  
+
+</div>
+</div>
+
+<% end %>
+

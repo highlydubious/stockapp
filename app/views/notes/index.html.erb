@@ -56,18 +56,19 @@
 
 		<% @notes.reverse.each do |n| %>
 				<div class="notes_container col-md-6">
-					<h3 class="title"><%= link_to n.stock.name, stock_path(n.stock.id) if n.stock %></h3>
+					<h3><%= link_to n.stock.symbol, (stock_path(n.stock.id) if n.stock), :class => 'title' %></h3>
 				<!-- how do do i get the stocks from seperete mongo doc to appear? -->
 				
 					<ul>
 					
 						<div class="item_block">
 							<!-- <li><%= link_to n.stock.symbol, stock_path(n.stock.id) %></li> -->
+							<li> <%= n.stock.name %> </li>
 							<li> <%= n.date %> </li>
 							<li> <%= n.timeframe %> </li>
 							<li> <%= n.comment %> </li>
-							<li><%= link_to 'Individual Page ', note_path(n) %></li>
-							<%= link_to 'Edit', '#' %>
+							<li> <%= n.direction %> </li>
+							<%= link_to 'Edit', edit_path(n) %>
 							<%= link_to 'Delete', destroy_path(n), :method => :delete %>
 						</div>	
 					</ul>

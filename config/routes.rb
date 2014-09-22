@@ -1,41 +1,54 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
 
-  get 'sessions/create'
 
-  get 'sessions/destroy'
 
+#####################
+# Notes Routes
+#####################
   root 'notes#index', as: :home
+  get 'notes/' => 'notes#index'
+  post 'notes' => 'notes#create', as: :create
   
-  get 'notes/index'
 
   get 'notes/new' => 'notes#new', as: :new
 
   get 'notes/activity' => 'notes#activity'
 
-
+  # get 'notes/:id/edit' => 'stocks#edit' as: :edit_stock
 
   get 'notes/show' => 'notes#show', as: :show
 
-  post 'notes' => 'notes#create'
+
 
   delete 'notes/:id' => 'notes#destroy', as: :destroy
 
-
-
-# User Junk and Routes
-  get 'signup' => 'users#new', as: :signup
-  post 'signup' => 'users#create', as: :users
-
-
-# Stock Routes #
+  ######################
+  # Stock Routes #
+  ######################
 
   get 'stocks/index' => 'stocks#index', as: :stocklist
   
   get 'stocks/:id' => 'stocks#show', as: :stock
+  
+  get 'notes/:id/edit' => 'notes#edit', as: :edit
+  patch 'notes/:id' => 'notes#update'
 
   get 'notes/:id' => 'notes#note', as: :note
+
+
+##########################
+# Sesssions & Users Routes
+##########################
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+
+  get 'signup' => 'users#new', as: :signup
+  post 'signup' => 'users#create', as: :users
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

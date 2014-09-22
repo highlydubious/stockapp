@@ -14,20 +14,26 @@ class NotesController < ApplicationController
 
   def create
     @stock = Stock.find_or_initialize_by(symbol: params[:stock_symbol])
-    @stock.name = params[:stock_name] if !params[:stock_name]
+    @stock.name ||= params[:stock_name] if !params[:stock_name]
 
     final_params = params.require(:note).permit(:market, :timeframe, :direction, :comment)
     final_params[:date] = Time.now
+
+
 
     @stock.notes.new(final_params)
     # @note = Note.new(params.require(:note).permit(:market, :date, :timeframe, :comment))
     if @stock.save
       # allows you to flash message on the screen on redirect
       flash[:notice] = "New Stock added successfully"
-      redirect_to notes_index_path
+      redirect_to home_path
     else
       render 'new'
     end
+  end
+
+  def create2
+
   end
 
   def destroy
@@ -40,10 +46,28 @@ class NotesController < ApplicationController
     end
   end
 
-
-  def activity
-    # @notes = Note.where(name: 'aapl').first
+  def edit
+    @note = Note.find(params[:id])
   end
+
+  def update
+     @stock = Stock.find_or_initialize_by(symbol: params[:stock_symbol])
+    @stock.name ||= params[:stock_name] if !params[:stock_name]
+
+    final_params = params.require(:note).permit(:market, :timeframe, :direction, :comment)
+    final_params[:date] = Time.now
+
+    @stock.notes.new(final_params)
+    # @note = Note.new(params.require(:note).permit(:market, :date, :timeframe, :comment))
+    if @stock.save
+      # allows you to flash message on the screen on redirect
+      flash[:notice] = "Be Careful Editing the Past"
+      redirect_to home_path
+    else
+      render 'new'
+    end
+  end
+
 
   def show
     # @note = Note.find(params[:id])
